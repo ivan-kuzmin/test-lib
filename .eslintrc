@@ -1,0 +1,88 @@
+{
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "parserOptions": {
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
+  "env": { "browser": true },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "arrowParens": "always",
+        "semi": true,
+        "useTabs": false,
+        "tabWidth": 2,
+        "bracketSpacing": true,
+        "singleQuote": true,
+        "jsxBracketSameLine": false,
+        "printWidth": 100
+      }
+    ],
+    // "react/require-default-props": 0,
+    // "camelcase": 0,
+    "no-nested-ternary": 0,
+    // "jsx-a11y/anchor-is-valid": 0,
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0,
+    "no-param-reassign": 0,
+    "prefer-destructuring": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    // "no-use-before-define": 0,
+    "react/jsx-props-no-spreading": 0,
+    "no-irregular-whitespace": 0,
+    "react/button-has-type": 0,
+    // "react-hooks/rules-of-hooks": "error",
+    // "react-redux/prefer-separate-component-file": 0
+    "react/self-closing-comp": 1,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/camelcase": 1,
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "globals": {
+    "IS_DEV": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx", "**/*.ts"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
+}

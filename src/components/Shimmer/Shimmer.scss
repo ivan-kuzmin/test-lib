@@ -1,0 +1,30 @@
+.Shimmer {
+  --background: #f6f7f8;
+  --shadow-color: #edeef1;
+
+  width: 100%;
+  height: 12px;
+  border-radius: 12px;
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, var(--background) 4%, var(--shadow-color) 25%, var(--background) 36%);
+  background-size: 1200px 100%;
+
+  &_dark {
+    --background: var(--color-white-disabled);
+    --shadow-color: var(--color-white-fourthly);
+  }
+
+  @-webkit-keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -1200px 0; }
+    100% { background-position: 1200px 0; }
+  }
+}

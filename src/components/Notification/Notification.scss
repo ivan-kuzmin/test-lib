@@ -1,0 +1,42 @@
+.Notification {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  background: var(--color-black);
+  border-radius: 12px;
+  color: white;
+  padding: var(--gap-2x) var(--gap-4x) var(--gap-2x) var(--gap-3x);
+
+  @include media('<=mobile') {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: unset;
+    z-index: 100;
+  }
+
+  &_type_error {
+    background-color: var(--color-red-primary);
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    font-weight: bold;
+    padding: var(--gap) var(--gap-2x);
+    margin: var(--gap-3x) calc(var(--gap-2x) * -1) calc(var(--gap) * -1);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.Checkbox {
+  display: flex;
+  width: 40px;
+  height: 24px;
+  cursor: pointer;
+  border: solid var(--color-black) 1px;
+  border-radius: 36.5px;
+  background: inherit;
+  transition-property: background;
+  transition-duration: var(--animate-duration);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: var(--color-black);
+    border-radius: 50%;
+    transition-property: left , background;
+    transition-duration: var(--animate-duration);
+  }
+
+  &_checked {
+    background: var(--color-black);
+
+    &::after {
+      background: var(--color-white);
+      left: 19px;
+    }
+  }
+}

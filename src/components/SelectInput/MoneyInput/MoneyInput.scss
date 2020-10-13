@@ -1,0 +1,43 @@
+.MoneyInput {
+  $root: &;
+
+  &__button {
+    border-radius: 50%;
+
+    &_disabled {
+      pointer-events: none;
+    }
+  }
+
+  &__circle {
+    transition: background var(--animate-duration);
+
+    &:hover:not(&_menuIsOpen) {
+      background: var(--color-orange-primary);
+    }
+
+    &_active, #{$root}__select:focus + * > & {
+      background: var(--color-orange-primary);
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+
+    @include media('>mobile') {
+      display: none;
+    }
+  }
+}

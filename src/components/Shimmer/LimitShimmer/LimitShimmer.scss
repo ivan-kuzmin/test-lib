@@ -1,0 +1,46 @@
+.LimitShimmer {
+  display: grid;
+  grid-template-areas: "title    title"
+                       "progress progress"
+                       "min      max";
+  grid-gap: 0 var(--gap);
+
+  &_card {
+    grid-template-columns: 64px 1fr 1fr;
+    grid-template-areas: "card progress progress"
+                         "card min      max"
+  }
+
+  &__title {
+    grid-area: title;
+    margin: 6px 0;
+  }
+
+  &__card {
+    grid-area: card;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  &__progress {
+    grid-area: progress;
+    height: 8px;
+
+    &_card {
+      height: 4px;
+    }
+  }
+
+  &__min {
+    grid-area: min;
+    margin: 14px 0 6px;
+    max-width: 150px;
+  }
+
+  &__max {
+    grid-area: max;
+    margin: 14px 0 6px;
+    max-width: 150px;
+    justify-self: end;
+  }
+}

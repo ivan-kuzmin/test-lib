@@ -1,0 +1,35 @@
+.Button {
+  display: block;
+  width: 256px;
+  padding: 10px var(--gap-2x);
+  background: var(--color-orange-primary);
+  color: var(--color-white);
+  font-weight: bold;
+  transition-duration: var(--animate-duration);
+  transition-property: background;
+
+  &:hover:not([disabled]) {
+    background: var(--color-orange-secondary);
+  }
+
+  &:active:not([disabled]) {
+    background: var(--color-orange-secondary);
+  }
+
+  &_secondary {
+    background: var(--color-black);
+
+    &:hover:not([disabled]) {
+      background: var(--color-black-secondary);
+    }
+  
+    &:hover:not([disabled]) {
+      background: var(--color-black-secondary);
+    }
+  }
+
+  &:disabled {
+    background: var(--color-black-disabled);
+    cursor: initial;
+  }
+}

@@ -1,0 +1,11 @@
+.CopyText {
+  &, &__link {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  &__icon {
+    margin-right: 5px;
+  }
+}

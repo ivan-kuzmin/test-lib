@@ -1,0 +1,42 @@
+.Limit {
+  transition: color var(--animate-duration);
+
+  &_critical {
+    color: var(--color-red-primary);
+  }
+
+  &_card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: var(--gap);
+  }
+
+  &__progress-bar {
+    &_critical {
+      color: var(--color-red-primary);
+    }
+
+    &_card {
+      height: 4px;
+    }
+  }
+
+  &__description {
+    margin-top: var(--gap);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__value {
+    color: var(--color-blue-primary);
+    transition: color var(--animate-duration);
+
+    &_critical {
+      color: var(--color-red-primary);
+    }
+  }
+
+  &__max {
+    color: var(--color-black);
+  }
+}

@@ -1,0 +1,13 @@
+.Badge {
+  padding: 4px 12px;
+  color: var(--color-orange-primary);
+  border-radius: 134px;
+  border: solid var(--color-orange-primary) 1px;
+  transition-property: background, border-color;
+  transition-duration: var(--animate-duration);
+
+  &_active {
+    background: var(--color-orange-disabled);
+    border-color: transparent;
+  }
+}

@@ -1,0 +1,105 @@
+.Input {
+  background: inherit;
+  border-radius: 4px;
+
+  &__input-block {
+    border-radius: inherit;
+    position: relative;
+    background: var(--color-white);
+  }
+
+  &__input {
+    $input: &;
+    width: 100%;
+    padding: 0 var(--gap-2x);
+    background: var(--color-coffee-light);
+    appearance: none;
+    box-shadow: none;
+    border: solid transparent 1px;
+    font: inherit;
+    transition-property: border, background, padding;
+    transition-duration: var(--animate-duration);
+    text-align: inherit;
+    outline: none;
+
+    &:focus, &_active {
+      &:not(#{$input}_error) {
+        border: solid var(--color-blue-primary) 1px;
+        background: var(--color-white);
+      }
+    }
+
+    &_withLabel {
+      padding-top: 29px;
+      padding-bottom: 11px;
+    }
+
+    &_withSelect {
+      padding-left: 68px;
+    }
+
+    &_error {
+      background: var(--color-red-secondary-on-white);
+      border-color: var(--color-red-primary);
+    }
+
+    &::placeholder {
+      opacity: 1;
+      color: var(--color-black-secondary);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 9px;
+    left: var(--gap-2x);
+    font: var(--font-xs-bold);
+    color: var(--color-black-secondary);
+    pointer-events: none;
+    transition-property: left;
+    transition-duration: var(--animate-duration);
+
+    &_withSelect {
+      left: 68px;
+    }
+
+    &_error {
+      color: var(--color-red-primary);
+    }
+  }
+
+  &__select {
+    position: absolute;
+    left: var(--gap-2x);
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+  }
+
+  &__eye {
+    position: absolute;
+    right: var(--gap-2x);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+    padding: var(--gap);
+    margin: 0 calc(var(--gap) * -1);
+  }
+
+  &__error {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 4px;
+    align-items: flex-start;
+    margin-top: 4px;
+    color: var(--color-red-primary);
+    font: var(--font-xs);
+  }
+
+  &__error-icon {
+    width: 14px;
+    height: var(--line-height-xs);
+  }
+}

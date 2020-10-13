@@ -1,0 +1,15 @@
+.Converter {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+
+  &_isMobile {
+    grid-template-columns: 1fr;
+  }
+
+  &__icon {
+    &_isMobile {
+      transform: rotate(90deg) translateY(-16px);
+      margin: -20px 0;
+    }
+  }
+}

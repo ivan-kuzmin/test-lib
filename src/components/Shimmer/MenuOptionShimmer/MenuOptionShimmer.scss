@@ -1,0 +1,34 @@
+.MenuOptionShimmer {
+  min-height: 64px;
+  width: 100%;
+  padding: var(--gap) var(--gap-2x);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "icon title"
+                       "icon subtitle";
+  grid-gap: 0 var(--gap);
+  align-items: center;
+
+  &_inline {
+    grid-template-areas: "icon subtitle";
+  }
+            
+  &__icon {
+    grid-area: icon;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    grid-area: title;
+    width: 60%;
+    max-width: 100px;
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    width: 100%;
+    max-width: 170px;
+  }
+}

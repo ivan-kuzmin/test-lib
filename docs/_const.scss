@@ -1,0 +1,21 @@
+@import './_mixins.scss';
+@import './_include-media.scss';
+
+$mobile-xs: 414px;
+$mobile: 480px;
+$tablet: 780px;
+$desktop: 1024px;
+
+$breakpoints: (
+  mobile-xs: $mobile-xs,
+  mobile: $mobile,
+  tablet: $tablet,
+  desktop: $desktop,
+);
+
+:export {
+  mobileXs: $mobile-xs;
+  mobile: $mobile;
+  tablet: $tablet;
+  desktop: $desktop;
+}
