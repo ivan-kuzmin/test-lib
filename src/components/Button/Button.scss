@@ -1,5 +1,7 @@
 .Button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 256px;
   padding: 10px var(--gap-2x);
   background: var(--color-orange-primary);
@@ -31,5 +33,9 @@
   &:disabled {
     background: var(--color-black-disabled);
     cursor: initial;
+  }
+
+  &__loader {
+    display: inline;
   }
 }
