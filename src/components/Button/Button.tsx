@@ -27,11 +27,7 @@ export const Button: React.FC<Button> = ({
       disabled={disabled || isLoading}
       {...rest}
     >
-      {isLoading ? (
-        <Loader className={cn('loader')} color="var(--color-white)" size={40} />
-      ) : (
-        children
-      )}
+      {isLoading ? <Loader className={cn('loader')} color="currentColor" size={40} /> : children}
     </button>
   );
 };
