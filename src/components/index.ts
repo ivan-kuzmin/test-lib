@@ -17,5 +17,5 @@ export { Select } from './Select';
 export { Modal } from './Modal';
 export { Banner } from './Banner';
 
-export { bemClassName, bemCssModules, displayRate } from '../utils';
+export { bemClassName, bemCssModules, displayRate, removeTrailingZeros } from '../utils';
 export { useIsMobile } from '../utils/customHooks';

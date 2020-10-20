@@ -7,3 +7,4 @@ export declare const displayRate: (amount: string | number, currency: string, di
     useGrouping?: boolean | undefined;
     showTrailingZeros?: boolean | undefined;
 } | undefined) => string;
+export declare const removeTrailingZeros: (exponentialNumber: number | string) => string;

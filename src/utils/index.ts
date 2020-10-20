@@ -59,3 +59,13 @@ export const displayRate = (
     : formatSignificantDigits;
   return showCurrency ? `${format} ${currency}` : format;
 };
+
+export const removeTrailingZeros = (exponentialNumber: number | string): string => {
+  const str = (+exponentialNumber).toString();
+  if (str.indexOf('e') !== -1) {
+    const exponent = parseInt(str.split('-')[1], 10);
+    const result = (+exponentialNumber).toFixed(exponent);
+    return result;
+  }
+  return str;
+};
