@@ -34,10 +34,11 @@ export const displayRate = (
   amount: string | number,
   currency: string,
   displayDigits: number,
-  options?: { showCurrency?: boolean; useGrouping?: boolean }
+  options?: { showCurrency?: boolean; useGrouping?: boolean; showTrailingZeros?: boolean }
 ) => {
   const showCurrency = (options && options.showCurrency) !== false;
   const useGrouping = (options && options.useGrouping) === true;
+  const showTrailingZeros = (options && options.showTrailingZeros) === true;
   const number = typeof amount === 'string' ? +amount : amount;
   const formatOptions = {
     style: 'decimal',
@@ -45,7 +46,7 @@ export const displayRate = (
   };
   const formatFractionDigits = number.toLocaleString('en-US', {
     ...formatOptions,
-    minimumFractionDigits: displayDigits,
+    minimumFractionDigits: showTrailingZeros ? displayDigits : 0,
     maximumFractionDigits: displayDigits,
   });
   const formatSignificantDigits = number.toLocaleString('en-US', {

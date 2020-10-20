@@ -5,4 +5,5 @@ export declare const bemCssModules: (style: {
 export declare const displayRate: (amount: string | number, currency: string, displayDigits: number, options?: {
     showCurrency?: boolean | undefined;
     useGrouping?: boolean | undefined;
+    showTrailingZeros?: boolean | undefined;
 } | undefined) => string;
