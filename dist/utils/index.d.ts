@@ -2,3 +2,7 @@ export declare const bemClassName: import("@bem-react/classname").ClassNameIniti
 export declare const bemCssModules: (style: {
     [key: string]: string;
 }, className: string) => (...args: any) => string;
+export declare const displayRate: (amount: string | number, currency: string, displayDigits: number, options?: {
+    showCurrency?: boolean | undefined;
+    useGrouping?: boolean | undefined;
+} | undefined) => string;

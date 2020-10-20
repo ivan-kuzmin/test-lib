@@ -29,3 +29,29 @@ export const bemCssModules = (
     return result;
   };
 };
+
+export const displayRate = (
+  amount: string | number,
+  currency: string,
+  displayDigits: number,
+  options?: { showCurrency?: boolean; useGrouping?: boolean }
+) => {
+  const showCurrency = (options && options.showCurrency) !== false;
+  const useGrouping = (options && options.useGrouping) === true;
+  const number = typeof amount === 'string' ? +amount : amount;
+  const formatOptions = {
+    style: 'decimal',
+    useGrouping,
+  };
+  const formatFractionDigits = number.toLocaleString('en-US', {
+    ...formatOptions,
+    minimumFractionDigits: displayDigits,
+    maximumFractionDigits: displayDigits,
+  });
+  const formatSignificantDigits = number.toLocaleString('en-US', {
+    ...formatOptions,
+    maximumSignificantDigits: 1,
+  });
+  const format = +number.toFixed(displayDigits) ? formatFractionDigits : formatSignificantDigits;
+  return showCurrency ? `${format} ${currency}` : format;
+};
