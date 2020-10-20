@@ -39,6 +39,7 @@ export const displayRate = (
   const showCurrency = (options && options.showCurrency) !== false;
   const useGrouping = (options && options.useGrouping) === true;
   const showTrailingZeros = (options && options.showTrailingZeros) === true;
+  const validDisplayDigits = displayDigits < 0 ? 0 : displayDigits > 20 ? 20 : displayDigits;
   const number = typeof amount === 'string' ? +amount : amount;
   const formatOptions = {
     style: 'decimal',
@@ -46,13 +47,15 @@ export const displayRate = (
   };
   const formatFractionDigits = number.toLocaleString('en-US', {
     ...formatOptions,
-    minimumFractionDigits: showTrailingZeros ? displayDigits : 0,
-    maximumFractionDigits: displayDigits,
+    minimumFractionDigits: showTrailingZeros ? validDisplayDigits : 0,
+    maximumFractionDigits: validDisplayDigits,
   });
   const formatSignificantDigits = number.toLocaleString('en-US', {
     ...formatOptions,
     maximumSignificantDigits: 1,
   });
-  const format = +number.toFixed(displayDigits) ? formatFractionDigits : formatSignificantDigits;
+  const format = +number.toFixed(validDisplayDigits)
+    ? formatFractionDigits
+    : formatSignificantDigits;
   return showCurrency ? `${format} ${currency}` : format;
 };
