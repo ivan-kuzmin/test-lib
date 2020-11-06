@@ -12,6 +12,8 @@ export interface Converter {
     error?: SelectInput['error'];
     fixFromCurrency?: boolean;
     fixToCurrency?: boolean;
+    fromLabel?: SelectInput['label'];
+    toLabel?: SelectInput['label'];
 }
 export declare const Converter: React.FC<Converter>;
 export {};

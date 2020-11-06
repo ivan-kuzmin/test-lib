@@ -21,6 +21,8 @@ export interface Converter {
   error?: SelectInput['error'];
   fixFromCurrency?: boolean;
   fixToCurrency?: boolean;
+  fromLabel?: SelectInput['label'];
+  toLabel?: SelectInput['label'];
 }
 
 export const Converter: React.FC<Converter> = ({
@@ -30,6 +32,8 @@ export const Converter: React.FC<Converter> = ({
   error,
   fixFromCurrency,
   fixToCurrency,
+  fromLabel,
+  toLabel,
 }) => {
   const [refCallback, isMobile] = useIsMobile();
 
@@ -37,7 +41,7 @@ export const Converter: React.FC<Converter> = ({
     <div className={cn({ isMobile }, [className])} ref={refCallback}>
       <SelectInput
         className={cn('input')}
-        label="From"
+        label={fromLabel || 'From'}
         value={from.amount[0]}
         onChange={(e) => from.amount[1](e.target.value)}
         selectValue={from.currency[0]}
@@ -54,7 +58,7 @@ export const Converter: React.FC<Converter> = ({
       )}
       <SelectInput
         className={cn('input')}
-        label="To"
+        label={toLabel || 'To'}
         value={to.amount[0]}
         onChange={(e) => to.amount[1](e.target.value)}
         selectValue={to.currency[0]}

@@ -11,7 +11,7 @@ import style from './Select.scss';
 
 const cn = bemCssModules(style, 'Select');
 
-const colourStyles = {
+const colourStyles: any = {
   container: (base) => ({
     ...base,
     height: '64px',
