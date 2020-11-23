@@ -34,7 +34,7 @@ const plugins = [
     filename: 'index.html',
     ...HtmlWebpackPluginDefaultConfig,
   }),
-  new CopyWebpackPlugin([{ from: 'src/assets' }, { from: 'src/styles/public' }]),
+  new CopyWebpackPlugin([{ from: 'src/styles/public' }]),
   new webpack.DefinePlugin({
     IS_DEV,
   }),
@@ -106,6 +106,7 @@ const config = {
               },
             },
           },
+          'resolve-url-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -138,6 +139,18 @@ const config = {
                 plugins: [{ removeTitle: false }],
                 floatPrecision: 2,
               },
+            },
+          },
+        ],
+      },
+      {
+        test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
             },
           },
         ],

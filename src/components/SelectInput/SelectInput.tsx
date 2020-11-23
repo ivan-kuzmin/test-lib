@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { bemCssModules } from '../../utils';
-import { Input } from '../../..';
+import { Input } from '../..';
 import { MoneyInput } from './MoneyInput';
 import { Menu } from './Menu';
 import style from './SelectInput.scss';

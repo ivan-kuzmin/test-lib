@@ -36,7 +36,7 @@ module.exports = {
     '@styles': path.resolve(__dirname, 'src/styles'),
     '@utils': path.resolve(__dirname, 'src/utils'),
   },
-  assetsDir: path.resolve(__dirname, 'src/assets'),
+  // assetsDir: path.resolve(__dirname, 'src/assets'),
   styles: './styleguide.styles.js',
   theme: './styleguide.theme.js',
   styleguideDir: './docs',
